@@ -1,0 +1,62 @@
+.hero {
+  text-align: center;
+
+  & .title {
+    @include fontcolor(44px, 900, 1.36, $add-text-color);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+.overlay {
+  height: 600px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 200px;
+
+  background-color: $hero-bg-color;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../images/hero.jpg');
+  background-position: center;
+}
+
+.hero-container {
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+
+  max-width: 696px;
+}
+
+.hero-button {
+  @include transition(background-color, color);
+  min-width: 200px;
+  padding-top: 10px;
+  padding-right: 32px;
+  padding-bottom: 10px;
+  padding-left: 32px;
+  border: none;
+  border-radius: 4px;
+
+  font-family: inherit;
+  @include fontcolor(
+    $button-fsize,
+    $add-fweight,
+    $button-lheight,
+    $add-text-color
+  );
+  letter-spacing: 0.06em;
+
+  background-color: $accent-color;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: $add-text-color;
+    color: $accent-color;
+  }
+}

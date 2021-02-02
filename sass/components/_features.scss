@@ -1,0 +1,50 @@
+.features {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  & .subtitle {
+    padding-top: 30px;
+    margin-bottom: 10px;
+
+    @include fontcolor($main-fsize, $add-fweight, 1.14, $second-color);
+    text-transform: uppercase;
+  }
+}
+
+.features-list .features-item {
+  width: calc((100% - 90px) / 4);
+
+  &:not(:nth-child(4n)) {
+    margin-right: 30px;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    height: 120px;
+    background-color: $add-background-color;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:nth-child(1)::before {
+    background-image: url(../images/antenna-icon.png);
+  }
+
+  &:nth-child(2)::before {
+    background-image: url(../images/clock-icon.png);
+  }
+
+  &:nth-child(3)::before {
+    background-image: url(../images/diagram-icon.png);
+  }
+
+  &:nth-child(4)::before {
+    background-image: url(../images/astronaut-icon.png);
+  }
+}
